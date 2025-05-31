@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Labs Task 4</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding-top: 1.5rem;
+            min-height: 70px;
+            border-bottom: 3px solid #e8491d;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+
+        header a:hover {
+            color: #ccc;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('images/podcast.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Cards Section */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.7rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            header #branding,
+            header nav {
+                float: none;
+                text-align: center;
+            }
+
+            header nav li {
+                float: none;
+                display: block;
+            }
+
+            header nav {
+                margin-top: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Responsive Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Responsive images with different sources for different screen sizes */
+        .responsive-image {
+            width: 100%;
+            height: auto;
+        }
+
+        /* High-resolution display support */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .hero {
+                background-image: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('images/hero-bg@2x.jpg');
+            }
+        }
+
+        /* Art direction - different images for different screen sizes */
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-image {
+                height: 200px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-image {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Elevate</span> Labs Task 4</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Embrace Responsive Design</h1>
+            <p> websites that adapt to any device, ensuring a seamless user experience.</p>
+        </div>
+    </section>
+
+    <section class="cards">
+        <div class="container">
+            <div class="card">
+                <picture>
+                    <source media="(max-width: 480px)" srcset="images/Media.jpg">
+                    <source media="(max-width: 768px)" srcset="images/Media.jpg">
+                    <img src="images/Media.jpg" alt="Mobile Design" class="responsive-image">
+                </picture>
+                <h3>Mobile-First Design</h3>
+                <p>Start with mobile layouts and progressively enhance for larger screens. This approach ensures optimal performance on all devices.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/Flexible Layout.jpg " alt="Flexible Layouts">
+                <h3>Flexible Layouts</h3>
+                <p>CSS Grid and Flexbox to create layouts that adapt to different screen sizes automatically.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/Media1.jpg" alt="Media Queries">
+                <h3>Media Queries</h3>
+                <p>Apply different styles based on device characteristics like screen width, height, and orientation.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/Touch.jpg" alt="Touch Friendly">
+                <h3>Touch-Friendly</h3>
+                <p>Design interfaces that work well with touch input, including appropriate button sizes and spacing.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/Performance.jpg" alt="Performance">
+                <h3>Performance</h3>
+                <p>Optimize images, fonts, and code to ensure fast loading times on mobile networks.</p>
+            </div>
+
+            <div class="card">
+                <img src="images/Testing.jpg" alt="Testing">
+                <h3>Testing</h3>
+                <p>Test your responsive design across multiple devices and browsers to ensure compatibility.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Elevate Labs Task 4 , Copyright &copy; 2025 Ayush Singh</p>
+    </footer>
+</body>
+</html>
